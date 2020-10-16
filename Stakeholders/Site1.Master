@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="NMUSolar.Stakeholders.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="stakeholder.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            height: 156px;
+        }
+        .auto-style2 {
+            text-align: center;
+            width: 1043px;
+            height: 50px;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="top-section">
+        <div id="top-img">
+           <%-- image--%>
+           <img src="../Images/mandelaLogo.png" class="auto-style1" />            
+        </div>
+        <div class="top-nav">
+          <a href="Home.aspx">Home.aspx</a>
+          <a href="Report.aspx">Report.aspx</a>
+          <a href="Valuation.aspx">Valuation.aspx</a>
+         
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+    </asp:ContentPlaceHolder>
+</body>
+</html>
