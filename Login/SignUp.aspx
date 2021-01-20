@@ -1,72 +1,125 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="NMUSolar.Login.SignUp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="NMUSolar.Login.SignUp"  %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Sign Up</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
     <link href="loginStyle.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-       <div id="nmu-banner">
-            <h1>Nelson Mandela University Solar</h1>
-        </div>
-        <div id="sign-up">
-            
-            <div id="sign-up-section">
-                <h1>Sign Up</h1>
-                <table>
-                   <%-- name--%>
-                    <tr>                        
-                    <td>  <asp:Label ID="Label1" runat="server" Text="Name" Cssclass="lbl-login"></asp:Label></td>
-                    <td>
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> </td>
+      <div class="back-drop-signUp">
+          <div class="nmmu-banner">
+              <h2>Nelson Mandela University Solar SignUp</h2>
+          </div>
+          <div id="signup-form">
+              <asp:Table runat="server">
+                 <asp:TableRow>
+                   <%--  Name--%>
+                     <asp:TableCell>
+                         <h3>Name</h3>
+                     </asp:TableCell>
+                     <asp:TableCell>
+                         <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                             ErrorMessage="Name is Required" ControlToValidate="txtname" ForeColor="Red" Display="None" Width="10px"></asp:RequiredFieldValidator>
+                         <asp:ValidationSummary ID="ValidationSummary1" runat="server"  ShowMessageBox="true" ShowSummary="false"/>
+                         
+                     </asp:TableCell>
+                 </asp:TableRow>
+                 <%-- Surname--%>
+                   <asp:TableRow>
+                     <asp:TableCell>
+                         <h3>Surname</h3>
+                     </asp:TableCell>
+                     <asp:TableCell>
+                         <asp:TextBox ID="txtsurname" runat="server"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Surname is required" ForeColor="Red" ControlToValidate="txtsurname"  ></asp:RequiredFieldValidator>
+                     </asp:TableCell>
+                 </asp:TableRow>
+                   <%-- EmailAddress--%>
+                   <asp:TableRow>
+                     <asp:TableCell>
+                         <h3>EmailAddress</h3>
+                     </asp:TableCell>
+                     <asp:TableCell>
+                         <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter correct email address format" ValidateRequestMode="Enabled" ViewStateMode="Enabled" SetFocusOnError="True" ControlToValidate="txtemail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                     </asp:TableCell>
+                 </asp:TableRow>
+                   <%-- UserRole--%>
+                   <asp:TableRow>
+                     <asp:TableCell>
+                         <h3>UserRole</h3>
+                     </asp:TableCell>
+                     <asp:TableCell>
+                         <asp:DropDownList ID="UserRole" runat="server">
+                             <asp:ListItem Value="Administrator" >Administrator</asp:ListItem>
+                             <asp:ListItem Selected="True"  Value="Assistant">Assistant</asp:ListItem>
+                         </asp:DropDownList>
+                     </asp:TableCell>
+                 </asp:TableRow>
+                   <%-- Password --%>
+                   <asp:TableRow>
+                     <asp:TableCell>
+                         <h3>Password</h3>
+                     </asp:TableCell>
+                     <asp:TableCell>
+                         <div class="container">
+                       
+                             <asp:TextBox runat="server" CssClass="Password" ID="firstPassword"> </asp:TextBox>
+                         <i class="far fa-eye" id="togglePassword" ></i>
+                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Password Required" ForeColor="Red" ControlToValidate="firstPassword"></asp:RequiredFieldValidator>
+                         </div>
                         
-                    </tr>
-                     <%-- Surname--%>
-                    <tr>
-                         <td>  <asp:Label ID="Label2" runat="server" Text="Surname" Cssclass="lbl-login"></asp:Label></td>
-                    <td>
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox> </td>
+                     </asp:TableCell>
+                 </asp:TableRow>
+                   <%-- Re-enter Password--%>
+                   <asp:TableRow>
+                     <asp:TableCell>
+                         <h3>Re-enter Password</h3>
+                     </asp:TableCell>
+                     <asp:TableCell>
+                         <div class="container">
                         
-                    </tr>
-                     <%-- Email Address--%>
-                    <tr>
-                        <td>  <asp:Label ID="Label3" runat="server" Text="Email Address" Cssclass="lbl-login"></asp:Label></td>
-                    <td>
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox> </td>
-                        
-                    </tr>
-                     <%-- UserRole--%>
-                    <tr>
-                        <td>  <asp:Label ID="Label4" runat="server" Text="User Role" Cssclass="lbl-login"></asp:Label>
+                             <asp:TextBox runat="server" CssClass="PPassword" ID="secondPassword"> </asp:TextBox>
+                         <i class="far fa-eye" id="rePassword" ></i>
+                          </div>
+                         </asp:TableCell>
+                 </asp:TableRow>
+                  <asp:TableRow>
+                      <%--Buttons--%>
+                      <asp:TableCell>
+                         
+                  <asp:Button ID="btnSignup" CssClass="s-btns" runat="server" Text="SignUp" OnClick="signUpUser" OnClientClick="signUpUser" />
+           
+                      </asp:TableCell>
+                      <asp:TableCell>
+                           <asp:Button ID="btnCancel" CssClass="s-btns" runat="server" Text="Cancel" OnClick="cancelUser" OnClientClick="cancelUser"/>
+                      </asp:TableCell>
+                  </asp:TableRow>
+                 <asp:TableRow>
+                     <asp:TableCell> 
+                         <asp:Label ID="Label1"  runat="server" Text=""></asp:Label>
+                     </asp:TableCell>
+                 </asp:TableRow>
+              </asp:Table>
 
-                        </td>
-                    <td> <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
-                        
-                    </tr>
-                     <%-- Password--%>
-                    <tr>
-                        <td>  <asp:Label ID="Label5" runat="server" Text="Password" Cssclass="lbl-login"></asp:Label></td>
-                    <td>
-                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox> </td>
-                        
-                    </tr>
-                     <%-- Re-enter Password--%>
-                    <tr>
-                        <td>  <asp:Label ID="Label6" runat="server" Text="Re-enter Password" Cssclass="lbl-login"></asp:Label></td>
-                    <td><asp:TextBox ID="TextBox6" runat="server"></asp:TextBox> </td>
-                        
-                    </tr>
-                </table>
-                <div id="signUp-section">
-                    <asp:Button ID="Button1"  CssClass="login-btn" runat="server"  Text="Sign Up" />
-                    <asp:Button ID="Button2"  CssClass="login-btn" runat="server"  Text="Cancel" />
-                </div>
-                
+          </div>
+         
+      </div>
+        <%--<div id="passwordModal">
+            <div id="modal-content">
+              <label id="lblconfirmPassword"></label>
             </div>
-        </div>
+
+
+        </div>--%>
+         
     </form>
+
+    <script src="loginScript.js"></script>
 </body>
 </html>

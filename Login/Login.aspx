@@ -9,58 +9,39 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="nmu-banner">
-            <h1>Nelson Mandela University Solar</h1>
-        </div>
-        <div class="login-section">
-            <h1>Login</h1>
-            <table>
-                <tr>
-                   <%-- EmailAddresss--%>
-                    <td>  <asp:Label ID="Label1" runat="server" Cssclass="lbl-login" Text="Email Address"></asp:Label></td>
-                    <td>
-                       
-                        <asp:TextBox ID="txtemailAddress" runat="server"></asp:TextBox>
-                       <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                               ControlToValidate="txtemailAddress" ErrorMessage="EmailAddress is required"
-                              SetFocusOnError="True" ForeColor="red" ></asp:RequiredFieldValidator>--%>
-
-                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                                     ErrorMessage="Invalid Email" ControlToValidate="txtemailAddress"
-                                     SetFocusOnError="True"
-                                     ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
-                        </asp:RegularExpressionValidator>
-                        </td>
-                </tr>
-                <tr>
-                    <%--Password--%>
-                    <td>
-                        <asp:Label ID="Label2" runat="server" Cssclass="lbl-login" Text="Password"></asp:Label>
-                    </td>
-                    <td>
-
-                        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-                       <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtPassword" runat="server" ErrorMessage="Password Required"></asp:RequiredFieldValidator>--%>
-                    </td>
-                </tr>
-            </table>
-            <div id="top-login-buttons">
-                <div>
-                    <button class="login-btn"> Login</button>
-                </div>
-               <div><button class="login-btn"> Cancel</button></div>
-                
+             <div class="back-drop">
+            <div class="nmmu-banner">
+                <h2>Nelson Mandela University Solar</h2>
             </div>
-           <div id="line"></div>
-            <div id="sign-up-button">
-                <h2>
-                    Do not have an account?
-                </h2>
-           
-                <asp:Button ID="Button1"  CssClass="login-btn" runat="server" OnClick="signUp" Text="SignUp" />
-               
+            <div id="login-form">
+                <h2>Login</h2>
+                <section class="login">
+                   <div id="lables">
+                       <asp:Label ID="Label1" runat="server" Text="EmailAddress"></asp:Label>                    
+                       <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+                   </div>
+                   <div id="text"> 
+                       <asp:TextBox ID="txtEmail" placeholder="EmailAddress" runat="server"></asp:TextBox>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" runat="server" ErrorMessage="EmailAddress Required" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>                  
+                   <asp:TextBox ID="txtPassword" placeholder="Password" runat="server"></asp:TextBox>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="Red" ErrorMessage="Password Required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+                  </div>
+                 </section>
+                <div id="login-buttons">        
+                     <asp:Button ID="Button1" CssClass="btn-login" runat="server" Text="Login" OnClick="loginUser" OnClientClick="loginUser" />                                       
+                     <asp:Button runat="server" CssClass="btn-login" Text="Cancel" ID="logCancel" OnClick="logCancel_Click"/>
+                  </div>
+                <div id="lblmsg">
+                      <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="signup-buttons">
+                    <h3>Do not have an account?</h3>   
+                    <asp:Button runat="server" OnClick="signUp" text="Sign-Up" ID="btnsignUp" OnClientClick="signUp"/>
+                </div>
+
             </div>
         </div>
     </form>
+  <%--  <script src="loginScript.js"></script>--%>
 </body>
 </html>

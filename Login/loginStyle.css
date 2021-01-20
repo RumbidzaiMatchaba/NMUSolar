@@ -1,82 +1,385 @@
-﻿body {
-    margin:0;
-    padding:0;
-
-}
-#nmu-banner
-{
-    height:50px;
-    width:100vw;
-    background-color:darkblue;
-    color:yellow;
-    text-align:center;
-}
-.login-btn {
-    background-color: darkblue;
-    height: 40px;
-    width: 150px;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    padding: 5px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 25px;
-}
-.login-section
-{
+﻿@import url('loginStyle.css');
+body{
     margin:auto;
-    text-align:center;
 }
 
-.login-section input[type=text] {
-    background-color: #dedad9;
-    width: 100%;
-    height: 50px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-#sign-up-section input[type=text] {
-    background-color: #dedad9;
-    width: 100%;
-    height: 50px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-table {
-    border-spacing: 10px;
-    margin: auto;
-    text-align: center;
-}
-.lbl-login {
-    font-family: 'Rubik', sans-serif;
-    font-size:30px;
-    align-items:flex-start;
-}
-#top-login-buttons
-{
-   
-    display:flex;
-    justify-content:center;
-}
-#top-login-buttons >div  {
-    margin-left:20px;
-}
-#top-login-buttons {
+/*Login page*/
+.back-drop {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 50px;
+    width:600px;
+    box-shadow:2px 2px 3px lightgrey;
+}
+.nmmu-banner {
+    height: 50px;
+    background-color: #0a1526;
+    color: yellow;
+    width: 99%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    font-family: Calibri;
+    letter-spacing: 1px;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login-form {
+    
+    height: 500px;
+    width: 400px;
+    position: absolute;
+    top: 50px;
+   
+}
+#login-form h2 {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family:Calibri;
+    }
+.login{
+    display: flex;
+    align-content:center;
+    align-items: center;
+
+}
+#text input[type=text]
+{
+    height:20px;
+    border:1px solid green;
+    margin-top:2.5vh;
+    margin-left:4vw;
+    border-radius: 20px;
+}
+#text{
+    flex:1;
+    float:right;
+    padding-right:20px;
+    
+}
+#lables {
+    flex: 1;
+    float: left;
+    padding-left: 20px;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    flex-direction:column
+    
+}
+#Label2{
+    margin-top:28px;
+}
+#Label1{
+    margin-top:22px;
+}
+#login-buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+#login-buttons input[type=button]{
+
+}
+.signup-buttons{
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction:row;
+}
+.signup-buttons h3 {
+ font-size: 18px;
+  font-family: Calibri;
+  margin-top:30px;
+}
+    /*End of Login page*/
+#signup-form h3 {
+  font-size: 18px;
+   font-family: Calibri;
+    }
+#signup-form
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /*margin-left:180px;*/
+}
+.back-drop-signUp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    border: 2px solid #0a1526;
+    margin: 10px;
+    width: 990px;
+    box-shadow: 2px 2px 3px lightgrey
+}
+/*.container i {
+    margin-left: -30px;
+    cursor: pointer;
+}*/
+#signup-form input[type=text] {
+    height: 25px;
+    border: 1px solid green;
+    margin-top: 2.5vh;
+    margin-left: 4vw;
+    border-radius: 5px;
+    width: 200px;
+}
+#signup-form input[type=password] {
+    height: 25px;
+    border: 1px solid green;
+    margin-top: 2.5vh;
+    margin-left: 4vw;
+    border-radius: 5px;
+    width: 200px;
 }
 
- #top-login-buttons > div {
-        margin-left: 20px;
-    }
+#UserRole {
+    height: 30px;
+    border: 1px solid green;
+    margin-top: 2.5vh;
+    margin-left: 4vw;
+    border-radius: 5px;
+    width:200px;
+}
+#logCancel, #Button1, #btnsignUp, #btnUpdate {
+    height: 30px;
+    border: 1px solid #0a1526;
+    margin-top: 2.5vh;
+    margin-left: 4vw;
+    border-radius: 5px;
+    width: 150px;
+}
+#u{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#lblmsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.s-btns {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #0a1526;
+}
+#btnCancel
+{
+    margin-left:50px;
+}
+
+/*main Admin Pages*/
+.main-main{
+    width:100%;
+    height:140px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0px;
+    padding:0px;
+    flex-direction:column;
+}
+#content-main
+{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-content:center;
+}
+#Image1 {
+    width: 200px;
+    border: 1px solid blue;
+    top: 0;
+    position:relative;
+    margin-top:5px;
+}
+.main-nav {
+    height: 50px;
+    background-color: #0a1526;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 5px #888888;
+    letter-spacing: 2px;
+}
+.menu-style, .static {
+    padding: 2px 30px;
+    margin: 10px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 18px;
+}
+/*li.static:hover{
+    color: black;
+    background-color:yellow;
+    
+}*/
+.menu-hover{
+    background-color:yellow;
+    color:black;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+#sessionUsername{
+    height :30px; 
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding-right:100px;
+    font-family:Calibri;
+    font-weight:500;
+    font-size:20px;
+}
+.data-grid{
+    width:300px;
+    border:1px solid red;
+
+}
+
+/*Valuation Settings*/
+#container-one, #container-two{
+    border:1px solid green;
+    width: 90%;
+    height:300px;
+    box-sizing:border-box;
+    margin-top:40px;
+}
+#container-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+#valLabels {
+    margin: 30px 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#valLabels h2
+{
+    font-family:Calibri;
+    letter-spacing:3px;
+    font-size:20px;
+    font-weight:800;
+    text-align:center;
+}
+#valuation-section td, th{
+border: 1px solid darkgrey;
+padding: 8px;
+
+}
+#valuation-section
+{
+    border-collapse:collapse;
+}
+#date-picker{
+    border:2px solid green;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row;
+    padding:0px 3px;
+    border-radius:10px;
+}
+#date-picker input[type=text]
+{
+    width:100px;
+    border:1px solid red;
+    border-radius:10px;
+}
+#date-picker h1{
+    font:calibri;
+    font-size:18px;
+    font-weight:300;
+}
+
+/*upload file Page*/
+#dataSelection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#solar-info-dataUpload
+{
+    margin:30px 200px;
+    border:1px solid red; 
+}
+.dropstyle
+{
+    width:100px;
+    border:1px solid green; 
+}
+#Sdata{
+    margin:20px 100px;
+    border:1px solid green;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+#sdatatable 
+{
+    border-spacing:30px; 
+}
+#upload-data{
+    padding:10px 50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+#data-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+
+}
+#upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border:1px solid green;
+    box-sizing:border-box;
+    padding:2px;
+    border-radius:5px;
+}

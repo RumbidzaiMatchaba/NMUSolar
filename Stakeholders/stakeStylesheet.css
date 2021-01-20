@@ -1,0 +1,312 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+#main-content
+{
+    
+
+}
+.menu-style
+{
+    /*color:white;
+    width:100vw;
+    height:10vh;
+    background-color:darkblue;*/
+}
+#Menu1 {
+    height: 50px;
+    background-color: #0a1526;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 5px #888888;
+    letter-spacing:2px;
+}
+.menu-style, .static {
+    padding: 2px 30px;
+    margin: 10px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 18px;
+}
+
+
+#logo-image img{
+   
+    width:200px;
+    
+}
+#logo-image{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:10px 0px;
+}
+#date-selection , #table-data{
+    margin:20px 100px;
+    min-height:50vh;
+    border:1px solid darkblue;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#graph-reports {
+    margin: 20px 100px;
+    min-height: 50vh;
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#table-data{
+
+}
+#date-pick{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid blue;
+    border-radius:20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown::before {
+ position: absolute;
+ content: " \2193";
+ top: 0px;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+    }
+/*chart section data*/
+#charts
+{
+    display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+#chart-data {
+    margin: 10px 30px;
+    border: 1px solid green;
+}
+#chartdate-selection
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+#chart-infor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#btn-charts{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction:row;
+}
+#datePicker
+{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    border:2px solid darkgrey;
+    border-radius:15px;
+    box-sizing:border-box;
+    padding:2px 10px; 
+    margin:0px 10px;
+}
+#datePicker1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 2px lightblue solid;
+   
+    box-sizing: border-box;
+    padding: 2px 20px;
+}
+#datePicker1 h3, #datePicker2 h3
+{
+    padding:0px 10px;
+
+}
+#datePicker2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 2px lightblue solid;
+    box-sizing: border-box;
+    padding: 2px 20px;
+}
+#generateChart
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 0px;
+
+}
+#btnCreatePieChart {
+    background-color: white;
+    color: black;
+    border: 1.5px solid gold;
+    width: 300px;
+    height: 50px;
+    margin: 30px 0px;
+    align-items: center;
+    font-size: 15px;
+    font-family: Calibri;
+    border-radius: 5px;
+}
+#btnCreatePieChartMonth, #btnCreateDayReportChart {
+    background-color: white;
+    color: black;
+    border: 1.5px solid gold;
+    width: 300px;
+    height: 50px;
+    margin: 30px 0px;
+    align-items: center;
+    font-size: 15px;
+    font-family: Calibri;
+    border-radius: 5px;
+}
+
+#btnCreatePieChartMonth:hover
+{
+     background-color: gold;
+ border: 1.5px solid black;
+}
+#datePicker h3 {
+    font-family: Calibri;
+    letter-spacing: 2px;
+    margin:2px;
+    padding:0;
+}
+#main-valuation
+{
+    margin:40px 200px;
+}
+#dayValuation h2{
+    font-family:Calibri;
+    justify-self:center;
+    
+}
+#day-container, #monthValuation, #yearValuation {
+    padding: 20px 40px;
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    margin:30px 0px;
+    min-height:40vh;
+    overflow:hidden;
+}
+#dayheader{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#day-graph-info, #month-graph-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#dayValuationGraphSection, #monthValuationGraphSection {
+    
+    border: 1px solid red;
+    min-height: 50vh;
+    overflow: hidden;
+    display:none;
+}
+#DayValuation-Data, #MonthValuation-Data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 50px;
+}
+#lbl-Infor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#ratepick {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px;
+}
+#tdata {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn-charts input[type=submit] {
+    width: 100px;
+    height: 30px;
+    border: 1px solid green;
+    border-radius: 6px;
+    margin: 40px 50px;
+   
+}
+/*Reports page*/
+#btndaySelection, #btnmonthSelection, #btnyearSelection {
+    background-color: white;
+    color: black;
+    border: 1.5px solid gold;
+    width:300px;
+    height:50px;
+    margin:30px 0px;
+    align-items:center;
+    font-size:15px;
+    font-family:Calibri;
+    border-radius:5px;
+
+}
+#btndaySelection:hover, #btnmonthSelection:hover, #btnyearSelection:hover,#btnCreatePieChart:hover {
+ background-color: gold !important;
+ border: 1.5px solid black  !important;
+}
+#daySelectionDates, #yearSelectionDates, #monthSelectionDates {
+ display: none;
+padding: 20px 0px;
+}
+#date-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 40px;
+    min-height:400px;
+    
+}
+#mDates, #dDates, #yDates
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction:row;
+}
+#monthSection, #daySection, #yearSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
